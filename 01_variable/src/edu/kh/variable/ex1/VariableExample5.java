@@ -40,7 +40,7 @@ public class VariableExample5 {
 		
 		System.out.println("내가 추가한 내용");
 		
-		
+		System.out.println("안녕");
 	
 		
 	}

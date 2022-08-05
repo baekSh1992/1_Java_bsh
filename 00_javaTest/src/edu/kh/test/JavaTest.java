@@ -1,6 +1,7 @@
 package edu.kh.test;
 
 // 한 줄 주석 : 컴파일러(번역기)가 해석하지 않는 부분
+
 /* 범위
    주석 */
 
@@ -13,6 +14,9 @@ public class JavaTest {
 		System.out.println("자바 조아");
 		System.out.println("println()은 한 줄 출력입니다.");
 		System.out.println( 100 + 200 + 300 + 400 );
+		
+		System.out.println("git 쉽지 않죠?");
+		System.out.println("git 연습 많이 해야 합니다.");
 	
 		//ln은 줄바꿈 > 한 줄 출력
 		//ln을 빼면 이어서 출력

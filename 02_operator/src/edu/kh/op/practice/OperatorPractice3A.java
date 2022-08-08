@@ -13,6 +13,10 @@ public class OperatorPractice3A {
 		// 양수 / 음수 / 0
 		String result = input == 0 ? "0" : input > 0 ? "양수" : "음수";
 		
+		String result2 = input > 0 ? "양수" : input < 0 ? "음수" : "0";
+		
+		String result3 = input < 0 ? "음수" : input > 0 ? "양수" : "0";
+		
 		
 		System.out.println(result + "입니다.");
 		

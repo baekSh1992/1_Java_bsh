@@ -12,14 +12,14 @@ public class dkdkdkdk {
 		int b = 100;
 		
 		
-	System.out.print("사탕쳐먹을 인원수 : ");
+	System.out.print("사탕먹을 인원수 : ");
 	int input1 = sc.nextInt();
 	
-	System.out.print("쳐뿌릴 사탕 갯수 : ");
+	System.out.print("사탕 갯수 : ");
 	int input2 = sc.nextInt();
 	
-	System.out.println("1명당 받아 쳐먹는 사탕 갯수 : " + b/a);
-	System.out.println("쳐뿌리고 남은 사탕 갯수 : " + b%a);
+	System.out.println("1명당 먹는 사탕 갯수 : " + b/a);
+	System.out.println("남은 사탕 갯수 : " + b%a);
 		
 		}
 }

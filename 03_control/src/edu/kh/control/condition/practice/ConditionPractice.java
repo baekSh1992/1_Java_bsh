@@ -16,7 +16,7 @@ public class ConditionPractice {
 		if(input > 0) { // 양수 
 			
 		
-			if(input % 2 == 0) { // 짞수
+			if(input % 2 == 0) { // 짝수
 				System.out.println("짝수 입니다.");
 			} else { // 홀수
 				System.out.println("홀수 입니다.");

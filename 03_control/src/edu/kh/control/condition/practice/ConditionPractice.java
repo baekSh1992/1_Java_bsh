@@ -15,7 +15,7 @@ public class ConditionPractice {
 	
 		if(input > 0) { // 양수 
 			
-		
+		String result;
 			if(input % 2 == 0) { // 짞수
 				System.out.println("짝수 입니다.");
 			} else { // 홀수
@@ -69,7 +69,6 @@ public class ConditionPractice {
 			System.out.println("영어 : " + eng);
 			System.out.println("합계 : " + sum);
 			System.out.println("평균 : " + avg);
-			
 			System.out.println("축하합니다. 합격입니다.");
 		} else { // 불합격
 		
@@ -182,8 +181,8 @@ public class ConditionPractice {
 			
 		System.out.printf("중간 고사 점수(20) : %.1f \n" , midTerm);
 		System.out.printf("기말 고사 점수(30) : %.1f \n" , finalTerm);
-		System.out.printf("과제 점수     (30) : %.1f \n" , report);
-		System.out.printf("출석 점수     (20) : %.1f \n" , attendance);
+		System.out.printf("과제 점수    (30) : %.1f \n" , report);
+		System.out.printf("출석 점수    (20) : %.1f \n" , attendance);
 		
 		double sum = midTerm + finalTerm + report + attendance;
 		

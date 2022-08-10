@@ -2,7 +2,7 @@ package edu.kh.control.condition.practice;
 
 import java.util.Scanner;
 
-public class home$ConditionPractice {
+public class home_ConditionPractice {
 	static Scanner sc = new Scanner(System.in); 
 		public static void main(String[] args) { // 입력받은 정수가 양수이면서 짝수일때만 짝수입니다 출력
 			

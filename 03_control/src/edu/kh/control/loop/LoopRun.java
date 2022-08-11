@@ -27,5 +27,36 @@ public class LoopRun {
 		
 		
 		
+		WhileExample whileEx = new WhileExample();
+		
+//		whileEx.ex1();
+//		whileEx.ex2();
+//		whileEx.ex3();
+		whileEx.ex4();
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

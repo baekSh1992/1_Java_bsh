@@ -11,12 +11,11 @@ public class OperatorPractice3 {
 		int input = sc.nextInt();
 		
 		// 삼항 연산자 :      조건식      ?  true인 경우    : false인 경우
-		String result = (input % 2 == 0)  ?  "양수 입니다." : "음수 입니다." ;
-		System.out.println(result);
+		String result = (input  >  0)  ?  "양수" : (input < 0) ? "음수" : "0"; // < 중첩 삼항 연산자
+		System.out.println(result + "입니다.");
 		
 		
-		String result2 = (input / 0 == 0)  ?  "0 입니다." : "0 입니다." ;
-		System.out.println(result2);
+		
 		
 		
 	}

@@ -129,27 +129,83 @@ public class adadadad {
 //			System.out.println(result);
 //			
 			
-			// home_ex7
-		}
-		
-		
+			// home_ex7 조건문 실습문제1 연령 구분
+//			Scanner sc = new Scanner(System.in);
+//			System.out.print("나이를 입력 해주세요 : ");
+//			int input = sc.nextInt();
+//			
+//			String result;
+//			
+//			if(input <= 13 && input > 5) {
+//				result = "어린이";
+//				
+//			} else if(input > 13 && input <= 19 ) {
+//				result = "청소년";
+//						
+//			} else if(input <= 5) {
+//				result = "유아";
+//
+//			} else if(input >= 70) {
+//				result = "노인";
+//				
+//			} else {
+//				result = "성인";
+//			}
+//			System.out.println(result);
 			
+			
+			// home_ex8 조건문 실습문제2 놀이기구 탑승 제한
+//			Scanner sc = new Scanner(System.in);
+//			System.out.print("나이를 입력 해주세요 : ");
+//			int age = sc.nextInt();
+//		
+//			System.out.print("키 를 입력 해주세요 : ");
+//			double height = sc.nextDouble();
+//		
+//			String result;
+//			
+//			if(age <= 0 || age >= 100) {
+//				result = "잘못 입력 하셨습니다.";
+//				
+//			} else if (age < 12){ 
+//					result = "적정 연령이 아닙니다.";
+//					
+//			}else if(height < 140.0){
+//					result = "적정 키가 아닙니다.";
+//						
+//			} else {
+//						result = "탑승 가능";
+//			}
+//					System.out.print(result);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-}
+
+		// home_ex9 Switch문 실습문제1 메뉴 출력
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("김밥3000 / 라면 4000 / 샌드위치 5000 / 짬뽕 9000");
+//		System.out.print("메뉴 입력 : ");
+//		String input = sc.next();
+//		
+//		int result;
+//		switch(input){
+//		case "김밥" : result = 3000; break;
+//		case "라면" : result = 4000; break;
+//		case "샌드위치" : result = 5000; break;
+//		case "짬뽕" : result = 9000; break;
+//		default : result = -1; break;
+//		}
+//		if(result == -1) {
+//			System.out.println("잘못 입력하셨습니다.");
+//			
+//		} else {
+//			System.out.printf("%s은/는 %d원 입니다." , input, result );
+//		}
+//			
+			
+			// home_ex9 Switch문 실습문제
+
+			
+		}	
+}	
+
+
+			

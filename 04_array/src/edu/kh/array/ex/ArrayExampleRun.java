@@ -20,12 +20,12 @@ public class ArrayExampleRun {
 //		arrayEx.ex10();
 //		arrayEx.ex11();
 
-		ArrayExample2 arrayEx2 = new ArrayExample2();
+//		ArrayExample2 arrayEx2 = new ArrayExample2();
 		
 //		arrayEx2.ex1();
 //		arrayEx2.ex2();
 //		arrayEx2.ex3();
-		arrayEx2.ex4();
+//		arrayEx2.ex4();
 //		arrayEx2.ex5();
 		
 		

@@ -485,6 +485,10 @@ public class ArrayExample {
 		
 		
 		
+		public void ex12(){
+			
+		}
+		
 		
 		
 		

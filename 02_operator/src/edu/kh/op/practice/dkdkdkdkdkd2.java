@@ -18,13 +18,13 @@ public class dkdkdkdkdkd2 {
 			System.out.print("나 이 : ");
 			int age = sc.nextInt();
 			
-			System.out.print("사랑 지수 : ");
+			System.out.print(" : ");
 			double lovepower = sc.nextDouble();
 			
- 			System.out.print("유통 기한 : ");
+ 			System.out.print(" : ");
  			String exp = sc.next();
  						
-			System.out.printf("%s에 사는 %d살 %s에 대한 사랑 지수는 %.4f이고, 사랑의 유통기한은 %s 입니다." , area, age, name, lovepower, exp);
+			System.out.printf("%s에 사는 %d살 %s에 대한 는 %.4f이고, 은 %s 입니다." , area, age, name, lovepower, exp);
 			
 		
 		}

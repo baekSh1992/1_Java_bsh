@@ -153,7 +153,7 @@ public class BranchExample {
 		// 난수 생성 : Math.random() -> java에서 제공해주는 난수 생성 방법
 		// 0.0 <= x < 1.0      0.0이상 1.0미만의 난수를 생성 (double 형)
 		 
-		int ran = (int)(Math.random() * 50 + 1);
+		int ran = (int)(Math.random() * 50 + 1 );
 		// 0.0 <= x < 1.0
 		// 0.0 <= x * 50 < 50.0
 		// 1.0 <= x * 50 +1 < 51.0

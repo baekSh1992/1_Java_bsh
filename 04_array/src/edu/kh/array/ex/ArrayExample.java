@@ -244,7 +244,7 @@ public class ArrayExample {
 			
 			Scanner sc = new Scanner(System.in);
 			System.out.print("입력 받을 인원 수 : ");
-			int size = sc.nextInt();
+			int size = sc.nextInt(); 
 			
 			int[] scoreArr = new int[size];
 			
@@ -485,10 +485,7 @@ public class ArrayExample {
 		
 		
 		
-		public void ex12(){
-			
-		}
-		
+				
 		
 		
 		

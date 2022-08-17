@@ -224,52 +224,49 @@ public class adadadad {
 			   // 졌습니다ㅠㅠ
 			   // 현재 기록 : 1승 1무 1패
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" 몇 판 ? ");
+		System.out.print("몇 판 ?");
 		int round = sc.nextInt();
 		
 		int win = 0;
 		int draw = 0;
 		int lose = 0;
 		
-		for(int i = 1 ; i <= round; i++) {
+		for(int i =1; i <= round; i++) {
 			System.out.print("\n" + i + "번 째 게임");
-			System.out.print("가위/바위/보 중 하나를 입력해주세요 : ");
+			System.out.print("가위/바위/보 중 하나를 입력해주세요");
 			String player = sc.next();
 			
-			 int ran = (int)(Math.random() *3);
-			 String com = null;
-			 
-			 switch(ran) {
-			 case 0 : com = "가위"; break;
-			 case 1 : com = "바위"; break;
-			 case 2 : com = "보"; break;
-			 
-			 }
-			 System.out.printf("컴퓨터는 [%s]를 선택했습니다.",com);
-			 
-			 if(player.equals(com)) {
-				 System.out.print("비겼습니다.");
-				 draw++;
-			 
-			 } else {
-				 boolean win1 = player.equals("가위") && com.equals("보");
-				 boolean win2 = player.equals("바위") && com.equals("가위");
-				 boolean win3 = player.equals("보") && com.equals("바위");
-				 
-				 if(win1||win2||win3) {
-					 System.out.print("이겼습니다.");
-					 win++;
-			 } else {
-				 System.out.print("졌습니다ㅠㅠ");
-				 lose++;
-			 }
-				 
-			 }
-			 
+			int ran = (int)(Math.random()*3);
+			String com = null;
+			
+			switch(ran) {
+			case 0 : com = "가위"; break;
+			case 1 : com = "바위"; break;
+			case 2 : com = "보"; break;
+			}
+			
+			System.out.printf("컴퓨터는 [%s]를 선택했습니다." , com);
+			
+			if(player.equals(com)) {
+				System.out.print("비겼습니다.");
+				draw++;
+			} else {
+				boolean win1 = player.equals("가위") && com.equals("보");
+				boolean win3 = player.equals("바위") && com.equals("가위");
+				boolean win2 = player.equals("보") && com.equals("바위");
+				
+				if(win1||win2||win3) {
+					System.out.print("플레이어 승!");
+					win++;
+				} else {
+					System.out.print("졌습니다ㅠㅠ");
+					lose++;
+				}
+			}
+			System.out.printf("현재 전적 : %d승 %d무 %d패", win, draw, lose);
 		}
-		
-		
-		System.out.printf("현재전적 : %d승 %d무 %d패 입니다." , win,draw,lose);
+			
+			
 		}
 }
 

@@ -31,7 +31,7 @@ public class ArrayExample {
 			int sum1 = num1 + num2 + num3 + num4;
 					
 			System.out.println("합계 : " + sum1);
-			
+			System.out.println("============================");
 					
 			// 배열 이용
 			int[] arr = new int[4]; // [] : 배열 기호
@@ -51,7 +51,7 @@ public class ArrayExample {
 				
 			}
 
-			System.out.println(sum2);
+			System.out.println("합계 : " + sum2);
 		}
 		
 		

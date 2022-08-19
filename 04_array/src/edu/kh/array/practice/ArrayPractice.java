@@ -15,28 +15,24 @@ public class ArrayPractice {
 //		[실행 화면]
 //		1 2 3 4 5 6 7 8 9
 //		짝수 번째 인덱스 합 : 25
+	
+		int[]arr=new int[9];
 		
-		int[] arr = new int[9];
+		int sum = 0;
 		
-		arr[0] = 1;
-		arr[1] = 2;
-		arr[2] = 3;
-		arr[3] = 4;
-		arr[4] = 5;
-		arr[5] = 6;
-		arr[6] = 7;
-		arr[7] = 8;
-		arr[8] = 9;
-		 
-		int sum = 0; 
-		for(int i = 0; i < 9; i++) {
-			System.out.print(arr[i]+ " ");
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = i+1;
+			System.out.print(arr[i] + " ");
 			
-			if(i % 2 == 0)
-			sum += arr[i];
+			if(i % 2 == 0) {
+			sum+=arr[i];
 			
 		}
-			System.out.println("\n짝수 번째 인덱스 합 : " + sum);
+	}
+		System.out.println("\n짝수 번째 입덱스 합 : " + sum);
+		
+		
+		
 		}
 	
 	public void practice2() {
@@ -49,27 +45,20 @@ public class ArrayPractice {
 //		9 8 7 6 5 4 3 2 1
 //		홀수 번째 인덱스 합 : 20
 			
-int[] arr = new int[9];
+	
+		int[] arr = new int[9];
 		
-		arr[0] = 1;
-		arr[1] = 2;
-		arr[2] = 3;
-		arr[3] = 4;
-		arr[4] = 5;
-		arr[5] = 6;
-		arr[6] = 7;
-		arr[7] = 8;
-		arr[8] = 9;
-		 
-		int sum = 0; 
-		for(int i = 9; i >= arr.length-8; i--) {
-			System.out.print(i + " ");
-			
-			if(i % 2 == 0)
-			sum += i;
-			
+		int sum = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = arr.length - i;
+			System.out.print(arr[i] + " ");
+					
+			if(i % 2 != 0) {
+				sum += arr[i];
+			}
 		}
-			System.out.println("\n짝수 번째 인덱스 합 : " + sum);
+			System.out.println("\n홀수 번째 인덱스 합 : " + sum);
 		}
 	
 		
@@ -87,13 +76,14 @@ int[] arr = new int[9];
 //		1 2 3 4 5 6 7 8	
 		
 		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("양의 정수 : ");
-		int input = sc.nextInt();
+		int[] arr = new int[sc.nextInt()];
 		
-		int[] arr = new int[input];
-		
-		for(int i = 1; i <= input; i++) {
-			System.out.print(i + " ");
+				
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = i+1;
+			System.out.print(arr[i] + " ");
 		}
 	}
 	
@@ -116,29 +106,86 @@ int[] arr = new int[9];
 		
 		int[] arr = new int[5];
 		
-		boolean flag = true;
 		for(int i=0; i < arr.length; i++) {
-			System.out.print("입력 " + i + " : ");
-			int num = sc.nextInt();
-			
-			if() {
-				
-			
-//			System.out.print("검색할 값 : ");
-//			
-//			
-//			int search = sc.nextInt();
-//			
-//			if(arr[i] == search ) { // arr[i] 값이 입력 받은 값과 같다면
-//				System.out.println("인덱스 : " + i);
-//				
-//				flag = false; // flag 값을 변경
-//				break; // 중복 데이터가 없으면 추가 검색을 하지 않아도 됨 (break;를 쓰는 이유)
-//			}
-//			if(flag) {
-//				System.out.println("일치하는 값이 존재하지 않습니다.");
-//				
-//			}
+			System.out.printf("입력 %d : ", i);
+			arr[i] = sc.nextInt();
 		}
+			
+		System.out.print("검색할 값 : ");
+		int search = sc.nextInt();
+		
+		boolean flag = true;
+		
+		for(int i =0; i < arr.length; i++) {
+			if(arr[i]==search){
+				System.out.println("인덱스 : " + i);
+				flag = false;
+				break;
+			}
+		}
+			if(flag) System.out.println("일치하는 값이 존재하지 않습니다.");
 	}
+	
+	public void practice5() {
+//		문자열을 입력 받아 문자 하나 하나를 char배열에 대입하고
+//		검색할 문자가 문자열에 몇 개 들어가 있는지, 몇 번째 인덱스에 위치하는지 인덱스를 출력하세요.
+		
+//		[실행 화면]
+//		문자열 : application
+//		문자 : i
+//		application에 i가 존재하는 위치(인덱스) : 4 8
+//		i 개수 : 2
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		
+		char[] arr = new char[str.length()];
+		
+		for(int i =0; i<arr.length; i++) {
+				arr[i]=str.charAt(i);
+		}
+		
+		System.out.print("문자 : ");
+		char ch = sc.nextLine().charAt(0);
+		
+		int  count = 0;
+		System.out.print(str + "에 " + ch + "가 존재하는 위치(인덱스) : ");
+		
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]==ch) {
+				System.out.print(i + " ");
+				
+				count++;
+			}
+		}
+		System.out.println();
+		
+		System.out.println(ch + "개수 : " + count);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

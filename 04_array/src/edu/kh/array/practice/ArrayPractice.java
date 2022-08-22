@@ -191,27 +191,7 @@ public class ArrayPractice {
 			arr[i] = sc.nextInt();
 			
 		}
-		}
 	}
+}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-

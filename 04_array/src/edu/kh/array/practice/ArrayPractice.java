@@ -189,9 +189,232 @@ public class ArrayPractice {
 		for(int i = 0; i < arr.length; i++) {
 		 System.out.print("배열 " + i + "번째 인덱스에 넣을 값 : ");
 			arr[i] = sc.nextInt();
-			
+		}
+		int sum = 0;
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+			sum += arr[i];
+		}
+		
+		System.out.println(); // 줄바꿈
+		System.out.println("총 합 : " + sum);
+	}
+		
+		public void practice7() {
+//		주민등록번호를 입력 받아 char 배열에 저장한 후 출력하세요.
+//		단, char 배열 저장 시 성별을 나타내는 숫자 이후부터 *로 저장하세요.
+//
+//		[실행 화면]
+//		주민등록번호(-포함) : 123456-1234567
+//		123456-1******
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("주민등록번호(-포함) : ");
+		String input = sc.next();
+		
+		char[] arr = new char[input.length()];
+		
+		for(int i=0; i<arr.length; i++) {
+			if(i<=7) { // 7번 인덱스 이하 (생년월일, - , 성별)
+				arr[i] = input.charAt(i);
+			} else { // 8번 인덱스 이상부터는
+				arr[i]='*';
+			}
+			System.out.print(arr[i]);
 		}
 	}
-}
+		
+		public void practice8() {
+//		3이상인 홀수를 입력 받아 배열의 중간까지는 1부터 1씩 증가하여 오름차순으로 값을 넣고,
+//		중간 이후부터 끝까지는 1씩 감소하여 내림차순으로 값을 넣어 출력하세요.
+//		단, 입력한 정수가 홀수가 아니거나 3 미만일 경우 “다시 입력하세요”를 출력하고
+//		다시 정수를 받도록 하세요.
+//
+//		[실행 화면]
+//		정수 : 4
+//		다시 입력하세요.
+//		정수 : -6
+//		다시 입력하세요.
+//		정수 : 5
+//		1, 2, 3, 2, 1
+			
+		Scanner sc = new Scanner(System.in);
+		while(true) { // 3이상의 수가 입력 될 때까지 무한 반복
+			// -> 3 이상이 입력되면 break;문으로 종료
+			System.out.print("정수 : ");
+			int input = sc.nextInt();
+			
+			if(input < 3 || input % 2 == 0) { // 3미만 또는 짝수인 경우 -> 반복
+				System.out.println("다시 입력하세요.");
+				
+			} else {
+				// 입력 받은 정수 만큼의 크기를 가지는 배열 생성
+				int[] arr = new int[input];
+				
+				int num = 0; // arr 배열에 대입될 값
+				
+				for(int i=0; i< arr.length; i++) {
+					if(i <= arr.length /2) { // 중간 이전까지 -> 증가
+						arr[i] = ++num;
+						
+					} else { // 중간 이후 -> 감소
+						arr[i] = --num;
+					}
+					
+					// 출력 시, 추가 (단, 마지막 제외)
+					if (i == arr.length -1) { // 마지막바퀴
+						System.out.print(arr[i]);
+					} else {
+						System.out.print(arr[i] + ", ");
+					}
+				}
+				break; // while 반복 멈춤
+			}
+		}
+	}
+		
+		public void practice9() {
+//		10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
+//		1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
+//
+//		[실행 화면]
+//		발생한 난수 : 9 7 6 2 5 10 7 2 9 6
+			
+		int[] arr = new int[10];
+		
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random() * 10 + 1);
+		}
+			
+		System.out.print("발생한 난수 : ");	
+		for(int i=0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+		public void practice10() {
+//		10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
+//		1~10 사이의 난수를 발생시켜 배열에 초기화 후
+//		배열 전체 값과 그 값 중에서 최대값과 최소값을 출력하세요.
+//
+//		[실행 화면]
+//		발생한 난수 : 5 3 2 7 4 8 6 10 9 10
+//		최대값 : 10
+//		최소값 : 2	
+			
+	// 1. 10개의 값을 저장할 수 있는 정수형 배열 선언 및 할당 
+		int[] arr = new int[10];
+		
+	// 2. 각 인덱스에 1부터 10 사이의 난수를 발생시켜 초기화 후 출력
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random() * 10 + 1);
+			
+			System.out.print(arr[i] + " ");
+		}
+		
+		System.out.println(); // 개행
+		
+		// 3. 반복문을 통한 최대값 최소값 알아내기
+		int max = 1; // 최소값을 담아줄 변수
+		int min = 10; // 최대값을 담아줄 변수
+		
+		for(int i=0; i<arr.length; i++) {
+			
+			if(arr[i] > max) { // 해당 인덱스의 값이 max보다 큰 경우
+				max = arr[i]; // 해당 값을 max변수에 담아줌
+			}
+			
+			if(arr[i] < min) { // 해당 인덱스의 값이 min보다 작은 경우
+				min = arr[i]; // 해당 값을 min 변수에 담아줌
+			}
+		}
+		
+		System.out.println("최대값 : " + max);
+		System.out.println("최소값 : " + min);
+		}
+		
+		public void practice11() {
+//			10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고
+//			1~10 사이의 난수를 발생시켜 중복된 값이 없게 배열에 초기화한 후 출력하세요.
+//
+//			[실행 화면]
+//			4 1 3 6 9 5 8 10 7 2	
+			
+		int[] arr = new int[10];
+			
+		// 2. 각 인덱스 값에 1부터 10 사이의 난수를 발생시키는데 이때 중복이 없도록
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()* 10 + 1);
+			
+			for(int x=0; x<i; x++) { // 중복 제거
+				if(arr[i] == arr[x]) {
+					i --;
+					break;
+				}
+			}
+		}
+			// 3. 출력
+			for(int i=0; i<arr.length; i++) {
+				System.out.print(arr[i] + " "); 
+			}
+		}
+		
+		public void practice12() {
+//			로또 번호 자동 생성기 프로그램을 만들기.
+//			(중복 값 없이 오름차순으로 정렬하여 출력하세요.)
+//
+//			[실행 화면]
+//			3 4 15 17 28 40
+			
+//		1. 크기가 6인 정수형 배열 선언 및 할당
+		int[] lotto = new int[6];
+		
+//		2. 배열에 중복값 없이 1부터 45 사이의 난수 초기화
+		for(int i=0; i<lotto.length; i++) {
+			lotto[i] = (int)(Math.random() * 45 +1 );
+			
+			for( int x = 1; x < i; x++) {
+				if(lotto[i] == lotto[x]) {
+					i--;
+					break;
+				}
+			}
+		}
+		
+//		3. 오름차순 정렬 (선택정렬)
+		for(int i=0; i<lotto.length; i++) { // 비교주체
+			for(int x=i+1; x<lotto.length; x++) { // 비교 대상
+				if(lotto[i] > lotto[x]) { // 비교 주체가 비교 대상보다 큰 경우 값을 바꿔줘야됨
+
+					int temp = lotto[i];
+					lotto[i] = lotto[x];
+					lotto[x] = temp;	
+				}
+			}
+		}
+		
+//		4. 출력
+		for(int i=0; i < lotto.length; i++) {
+			System.out.print(lotto[i] + " ");
+		}
+	}
+		
+		public void practice13() {
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	

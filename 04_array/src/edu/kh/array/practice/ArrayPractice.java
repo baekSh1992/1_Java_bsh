@@ -1,5 +1,6 @@
 package edu.kh.array.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -400,21 +401,152 @@ public class ArrayPractice {
 	}
 		
 		public void practice13() {
+//			문자열을 입력 받아 문자열에 어떤 문자가 들어갔는지 배열에 저장하고
+//			문자의 개수와 함께 출력하세요. (중복 제거)
+//
+//			[실행 화면]
+//			문자열 : application
+//			문자열에 있는 문자 : a, p, l, i, c, t, o, n
+//			문자 개수 : 8	
 			
+		// 1. 사용자에게 문자열 입력 받기
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		
+		// 2. 해당 문자열의 문자들을 char[]에 담기
+		char[] arr = new char[str.length()];
+		
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = str.charAt(i);
+		}
+		
+		// 3. char배열에서 중복값 존재할 경우 출력X
+		int count = 0; // 문자 갯수 카운트
+		
+		System.out.print("문자열에 있는 문자 : ");
+		
+		for(int i=0; i<arr.length; i++) {
+			
+			boolean flag = true; // 중복체크용 flag
+			
+			for(int x=0; x<i; x++) {
+				if(arr[i] == arr[x]) {
+					flag = false; // 중복이 발생했을 때
+					break;
+				}
+			}
+			
+			if(flag) { // 중복이 발생하지 않았을 때
+				
+				if(i == 0 ) {
+					System.out.print(arr[i]);
+				}else {
+					System.out.print(", " + arr[i]);
+				}
+				
+				count++;
+			}
+		}
+		System.out.println(); // 줄바꿈
+		System.out.println("문자 갯수 : " + count);
+		
 		}
 		
 		
+		public void practice14() {
+//			사용자가 입력한 배열의 길이만큼의 String 배열을 선언 및 할당하고
+//			배열의 인덱스에 넣을 값 역시 사용자가 입력하여 초기화 하세요.
+//			단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
+//			늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
+//			사용자가 더 이상 입력하지 않겠다고 하면 배열 전체 값을 출력하세요.
+//			(배열의 얕은 복사, 깊은 복사를 이용하는 문제)
+//
+//			얕은 복사 : 배열의 시작 주소만을 복사하여 두 참조 변수가 하나의 배열을 참조.
+//			깊은 복사 : 원본 배열이 가지고 있는 데이터를 그대로 복사한 새로운 배열 (복제)
+//
+//			 tip : 깊은 복사를 위한 새로운 배열은 꼭 원본 배열과 같은 크기일 필요는 없다!
+		
+//			[실행 화면]
+//			배열의 크기를 입력하세요 : 3
+//			1번째 문자열 : 자바의 정석
+//			2번째 문자열 : 알고리즘
+//			3번째 문자열 : C프로그래밍
+//			더 값을 입력하시겠습니까?(Y/N) : y
+//			더 입력하고 싶은 개수 : 2
+//			4번째 문자열 : 인간관계
+//			5번째 문자열 : 자기계발
+//			더 값을 입력하시겠습니까?(Y/N) : y
+//			더 입력하고 싶은 개수 : 1
+//			6번째 문자열 : 영단어600
+//			더 값을 입력하시겠습니까?(Y/N) : n
+//			[자바의 정석, 알고리즘, C프로그래밍, 인간관계, 자기계발, 영단어600]
+			
+			Scanner sc = new  Scanner(System.in);
+			
+			// 1. 첫 배열 크기 지정
+			System.out.print("배열의 크기를 입력하세요 : ");
+			int size  = sc.nextInt();
+			sc.nextLine();
+			
+			String[] arr = new String[size];
+			
+			// 2. 첫 배열에 저장할 문자열 입력 받기
+			for(int i=0; i<arr.length; i++) {
+				System.out.print((i+1) + "번째 문자열 : ");;
+				arr[i] = sc.nextLine();
+			}
+
+			// 3. 반복이 시작되는 구간부터 무한루프로 작성하여 내부에 종료 조건을 만들어 break;
+			while(true) {
+				System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+				char ch = sc.nextLine().charAt(0);
+				
+			// 4. 값을 더 입력할 경우
+			if(ch == 'y' || ch == 'Y') {
+			
+			// 5. 더 입력받을 갯수 입력 받기
+				System.out.print("더 입력하고 싶은 갯수 : ");
+				int addSize = sc.nextInt();
+				sc.nextLine();
+			
+			// 6. 새로 값을 입력 받을 배열 생성 -> 기존 배열 크기 + 추가 입력 갯수
+				String[] newArr = new String[arr.length + addSize];
+				
+			// 7. 배열 복사 + 새로운 문자열 입력 받기
+				for(int i=0; i<newArr.length; i++) {
+					if(i<arr.length) { // 인덱스의 크기가 기존 배열보다 작을 경우 기존 배열값 복사
+						newArr[i] = arr[i];
+					}else { // 인덱스의 크기가 기존 배열보다 클 경우 새로운 문자열 입력 받기
+						System.out.print((i+1) + "번째 문자열 : ");
+						newArr[i] = sc.nextLine();
+					}
+				}
+			// 8. 기존 배열공간을 참조하던 변수 arr에 새로운 배열 공간의 주소 newArr 대입
+				arr = newArr;
+			}else if(ch == 'n'||ch =='N') { // 9. 값을 더 입력하지 않는 경우
+				break; // 반복문 종료
+			}else { // 잘못 입력한 경우
+				System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요.");
+			}
+		}
+			// 10. 배열값 모두 출력
+			System.out.println(Arrays.toString(arr));
+	}
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		public void practice15() {
+//			3행 3열짜리 문자열 배열을 선언 및 할당하고
+//			인덱스 0행 0열부터 2행 2열까지 차례대로 접근하여 “(0, 0)”과 같은 형식으로 저장 후 출력하세요.
+//
+//			[실행 화면]
+//			(0, 0)(0, 1)(0, 2)
+//			(1, 0)(1, 1)(1, 2)
+//			(2, 0)(2, 1)(2, 2)
+			
+			
+		}	
 	}
 	
 	

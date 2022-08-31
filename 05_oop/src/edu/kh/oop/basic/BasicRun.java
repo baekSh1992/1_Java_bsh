@@ -6,7 +6,7 @@ public class BasicRun {
 			
 			BSH 백승훈 = new BSH();
 			// heap 영역에 BSH 클래스에 정의된 내용을 이용하여
-			// BDH 객체 생성(할당)
+			// BSH 객체 생성(할당)
 			
 			// 객체가 가지고 있는 속성 출력
 			System.err.println("이름 : " + 백승훈.name);

@@ -2,7 +2,7 @@ package edu.kh.oop.field.ex1;
 
 public class FieldTest {
 		
-		// 필드(Field) : 클래스에 작성되는 내용 중 객체의 속성
+		// 필드(Field) : 클래스에 작성되는 내용 중
 		// 				객체의 속성을 작성하는 부분(영역)
 	
 		// == 멤버 변수 

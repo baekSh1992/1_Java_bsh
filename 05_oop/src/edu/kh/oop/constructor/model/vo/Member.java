@@ -101,7 +101,7 @@ public class Member {
 	// - 생성자를 이용한 필드 초기화 구문의 중복을 없애고, 재사용성을 늘리기 위한 기능
 	// - 주의사항 : 반드시 생성자의 첫 줄에 작성 되어야 한다.
 	
-	public Member(int mamberAge, String memberPhone) {
+	public Member(int memberAge, String memberPhone) {
 		
 		// 전달 받은 매개변수로 현재 객체 필드 초기화
 		this.memberAge = memberAge;

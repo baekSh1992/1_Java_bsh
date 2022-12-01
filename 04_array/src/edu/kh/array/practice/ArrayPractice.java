@@ -546,7 +546,17 @@ public class ArrayPractice {
 //			(2, 0)(2, 1)(2, 2)
 			
 			
-		}	
+		}
+		
+		public void practice16() {
+			int[] arr = {100, 95, 80, 70, 60 };
+			for(int i =0; i<arr.length; i++) {
+				System.out.print(arr[i] + ",");
+			}
+//			System.out.println();
+			char[] charr = {'a','b','c','d'};
+			System.out.println(charr);
+		}
 	}
 	
 	

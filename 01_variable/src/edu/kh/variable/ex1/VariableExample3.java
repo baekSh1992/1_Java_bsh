@@ -79,7 +79,7 @@ public class VariableExample3 {
 		
 		str1 = "String도 기본 자료형 변수처럼 값을 변경할 수 있습니다."; // 마지막 대입한 값만 보관됨
 		
-		System.out.println(str1);
+		System.out.println(str1);///
 		
 		
 		// 변수 선언과 동시에 초기화

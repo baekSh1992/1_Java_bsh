@@ -12,6 +12,7 @@ public class ConstructorRun {
 		Member member2 = new Member();
 		Member member3 = new Member();
 		Member member4 = new Member();
+		Member seunghoon = new Member();
 						     // 기본 생성자
 		
 		// 기본 생성자가 없어도 Member() 구문에서 에러가 발생하지 않는다.

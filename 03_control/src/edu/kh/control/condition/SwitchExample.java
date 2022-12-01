@@ -214,7 +214,7 @@ public class SwitchExample {
 		
 		switch(month) {
 		case 3 : season = "봄"; break;  // case 3 : case 4 : case 5 : season = "봄"; break;  
-		case 4 : season = "봄"; break;	// break;가 없을때 
+		case 4 : season = "봄"; break;
 		case 5 : season = "봄"; break;
 		
 		case 6 : season = "여름"; break; // case 6 : case 7 : case 8 : season = "여름"; break;
@@ -234,6 +234,35 @@ public class SwitchExample {
 		
 		System.out.println(season);
 	}
+
+	
+	public void ex6() {
+		
+		int num = 0;
+		
+		for(int i = 1; i <= 5; i++) {
+			num = (int) (Math.random() * 6) +1;
+			System.out.println(num);
+		}
+	}
+	
+	public void ex7() {
+		
+		
+		for(int i=1; i<=5; i++) {
+			System.out.println("I can do it.");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
